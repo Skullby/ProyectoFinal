@@ -1,0 +1,16 @@
+{% extends 'Blog/padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h2>Editar Perfil de {{usuario}}</h2>
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Editar</button>
+
+</form>
+
+{% endblock %}

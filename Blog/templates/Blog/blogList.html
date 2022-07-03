@@ -1,0 +1,31 @@
+{% extends 'Blog/padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+<ul>
+
+    <a href="{% url 'Create' %}">Crea una Post!</a>
+    {% for post in object_list %}
+
+    <li>
+        <p>
+            Titulo: {{ post.titulo }}
+            Autor: {{ post.autor }}
+        </p>
+        <p>
+            <a href="{% url 'Detail' post.id %}">Leer</a>
+            <a href="{% url 'Delete' post.id %}">Borrar</a>
+
+
+        </p>
+
+
+
+
+    </li>
+
+
+
+    {% endfor %}
+</ul>
+{% endblock %}
+
